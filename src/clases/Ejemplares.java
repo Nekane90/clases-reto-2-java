@@ -2,7 +2,7 @@ package clases;
 
 import java.util.Objects;
 
-public class Ejemplares extends Libros {
+public class Ejemplares {
 	
 	private int id_ejemplar;
 	private String estado_fisico;
@@ -14,7 +14,7 @@ public class Ejemplares extends Libros {
 	
 	public Ejemplares(int cod_libro, String titulo_libro, int isbn, int n_copias, int id_ejemplar, String estado_fisico,
 			int codigo_libro) {
-		super(cod_libro, titulo_libro, isbn, n_copias);
+		super();
 		this.id_ejemplar = id_ejemplar;
 		this.estado_fisico = estado_fisico;
 	}
@@ -26,7 +26,7 @@ public class Ejemplares extends Libros {
 
 
 	public Ejemplares(int cod_libro, String titulo_libro, int isbn, int n_copias, int id_ejemplar) {
-		super(cod_libro, titulo_libro, isbn, n_copias);
+		super();
 		this.id_ejemplar = id_ejemplar;
 	}
 

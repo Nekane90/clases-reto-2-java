@@ -3,7 +3,7 @@ package clases;
 import java.util.Date;
 import java.util.Objects;
 
-public class Penalizaciones extends Usuarios {
+public class Penalizaciones {
 
 	private Date fechaInicioPenalizacion;
 	private Date fechaFinPenalizacion;
@@ -14,7 +14,7 @@ public class Penalizaciones extends Usuarios {
 	
 	public Penalizaciones(int id_usuario, int dNI, String nombre_usuario, int tlf, String correo_electronico,
 			String contraseña, Date fechaInicioPenalizacion, Date fechaFinPenalizacion) {
-		super(id_usuario, dNI, nombre_usuario, tlf, correo_electronico, contraseña);
+		super();
 		this.fechaInicioPenalizacion = fechaInicioPenalizacion;
 		this.fechaFinPenalizacion = fechaFinPenalizacion;
 	}
@@ -31,7 +31,7 @@ public class Penalizaciones extends Usuarios {
 
 	public Penalizaciones(int id_usuario, String correo_electronico, Date fechaInicioPenalizacion,
 			Date fechaFinPenalizacion) {
-		super(id_usuario, correo_electronico);
+		super();
 		this.fechaInicioPenalizacion = fechaInicioPenalizacion;
 		this.fechaFinPenalizacion = fechaFinPenalizacion;
 	}

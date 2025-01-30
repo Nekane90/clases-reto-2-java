@@ -10,13 +10,14 @@ public class Usuarios {
 	private int tlf;
 	private String correo_electronico;
 	private String contraseña;
+	private boolean seguridadSocial;
 	
 	
 	
 	/////////////CONSTRUCTORES//////////
 	
 	public Usuarios(int id_usuario, int dNI, String nombre_usuario, int tlf, String correo_electronico,
-			String contraseña) {
+			String contraseña, boolean seguridadSocial) {
 		super();
 		this.id_usuario = id_usuario;
 		DNI = dNI;
@@ -24,30 +25,26 @@ public class Usuarios {
 		this.tlf = tlf;
 		this.correo_electronico = correo_electronico;
 		this.contraseña = contraseña;
-		
+		this.setSeguridadSocial(seguridadSocial);
 	}
 
-	public Usuarios(int id_usuario, int dNI, String correo_electronico, String contraseña) {
+	
+	
+	public Usuarios(int dNI, String nombre_usuario, String correo_electronico, String contraseña) {
 		super();
-		this.id_usuario = id_usuario;
 		DNI = dNI;
+		this.nombre_usuario = nombre_usuario;
 		this.correo_electronico = correo_electronico;
 		this.contraseña = contraseña;
-		
 	}
+
 
 	public Usuarios() {
 		super();
 	}
 
-	public Usuarios(int id_usuario, String correo_electronico) {
-		super();
-		this.id_usuario = id_usuario;
-		this.correo_electronico = correo_electronico;
-	}
 
-	
-	
+
 	//////////GETTERS Y SETTERS////////////////
 	
 	public int getId_usuario() {
@@ -97,13 +94,18 @@ public class Usuarios {
 	public void setContraseña(String contraseña) {
 		this.contraseña = contraseña;
 	}
+	public void setSeguridadSocial(boolean seguridadSocial) {
+		this.seguridadSocial = seguridadSocial;
+	}
+	
 
 	
 		///////////TO STRINGS///////////////
 	@Override
 	public String toString() {
 		return "Usuarios [id_usuario=" + id_usuario + ", DNI=" + DNI + ", nombre_usuario=" + nombre_usuario + ", tlf="
-				+ tlf + ", correo_electronico=" + correo_electronico + ", contraseña=" + contraseña + "]";
+				+ tlf + ", correo_electronico=" + correo_electronico + ", contraseña=" + contraseña
+				+ ", seguridadSocial=" + seguridadSocial + "]";
 	}
 
 	
@@ -113,8 +115,10 @@ public class Usuarios {
 	
 	@Override
 	public int hashCode() {
-		return Objects.hash(DNI, contraseña, correo_electronico, id_usuario, nombre_usuario, tlf);
+		return Objects.hash(DNI, contraseña, correo_electronico, id_usuario, nombre_usuario, seguridadSocial, tlf);
 	}
+
+
 
 	@Override
 	public boolean equals(Object obj) {
@@ -127,9 +131,9 @@ public class Usuarios {
 		Usuarios other = (Usuarios) obj;
 		return DNI == other.DNI && Objects.equals(contraseña, other.contraseña)
 				&& Objects.equals(correo_electronico, other.correo_electronico) && id_usuario == other.id_usuario
-				&& Objects.equals(nombre_usuario, other.nombre_usuario) && tlf == other.tlf;
+				&& Objects.equals(nombre_usuario, other.nombre_usuario) && seguridadSocial == other.seguridadSocial
+				&& tlf == other.tlf;
 	}
-
 
 	
 	/////////// METODOS DE LA CLASE/////////////////
@@ -137,9 +141,17 @@ public class Usuarios {
 	public boolean  esEmpleado() {
 		return false;
 	}
+	
+
+
+
 	public boolean estaPenalizado() {
 		return false;
 	}
+
+
+
+
 	
 	
 	
